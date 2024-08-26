@@ -88,28 +88,29 @@
         //여기서 호출해서 실행시켜 줘야 함
         item2Rotate();
 
-        // 세번 쨰 사각형
+        // 세번 쨰 사각형 회전
         let rotate3 = 0;
         item3.addEventListener('click', function(){
             rotate3 +=90;
             item3.style.transform = `rotate(${rotate3}deg)`;
-            item3.style.transition = '5s';
+            item3.style.transition = '1s';
             console.log(rotate3);
         })
 
-        // 네번 쨰 사각형
+        // 네번 쨰 사각형 회전 mouseover, mouseleave
         let rotate4 = 0;
         let item4Req;
 
         item4.addEventListener('mouseover', function(){
             item4Rotate();
         })
-        item4.addEventListener('mouseover', function(){
+        
+        item4.addEventListener('mouseleave', function(){
             cancelAnimationFrame(item4Req);
         })
 
         function item4Rotate() {
-            rotate4 += 5;
+            rotate4 += 1;
             item4Req = requestAnimationFrame(item4Rotate);
             item4.style.transform = `rotate(${rotate4}deg)`;
         }
